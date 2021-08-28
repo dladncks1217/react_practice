@@ -13,7 +13,7 @@ class PhoneForm extends Component{
     }
     handleSubmit = (e) =>{
         e.preventDefault();
-        this.props.onCreate({
+        this.props.onCreate({ // App.js에서 onCreate를 호출한 부분 (handleCreate호출)
             name:this.state.name,
             phone:this.state.phone
         })
