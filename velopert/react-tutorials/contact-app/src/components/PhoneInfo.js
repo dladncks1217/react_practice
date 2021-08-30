@@ -40,6 +40,9 @@ class PhoneInfo extends Component {
             padding: '8px',
             margin: '8px'
         }
+        
+        console.log(name);
+
         return (
             <div style={style}>
                 {
