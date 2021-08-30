@@ -6,6 +6,14 @@ class PhoneInfo extends Component {
         name:'',
         phone:'',
     }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if(this.state !== nextState){
+            return true;
+        }
+    }
+    
+
     handleRemove = () => {
         const { info, onRemove } = this.props;
         onRemove(info.id);

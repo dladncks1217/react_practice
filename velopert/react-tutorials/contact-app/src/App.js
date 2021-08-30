@@ -3,7 +3,7 @@ import PhoneForm from './components/PhoneForm';
 import PhoneInfoList from './components/PhoneInfoList';
 
 class App extends Component{
-  id=0;
+  id = 3;
   state={
     information:[
       {
@@ -22,7 +22,15 @@ class App extends Component{
         phone:'010-0000-0003',
       }
     ],
+    keyword:'',
   }
+
+  handleChange=(e)=>{
+    this.setState({
+      keyword: e.target.value,
+    })
+  }
+
   handleCreate = (data) => {
     const {information} = this.state;
     console.log(data);
@@ -60,8 +68,15 @@ class App extends Component{
     return (
       <div>
        <PhoneForm onCreate={this.handleCreate}/>
+       <input
+        value={this.state.keyword}
+        onChange={this.handleChange}
+        placeholder="검색..."
+       ></input>
        <PhoneInfoList 
-        data={this.state.information}
+        data={this.state.information.filter(
+          info=>info.name.indexOf(this.state.keyword) > -1 // 검색 구현
+        )}
         onRemove={this.handleRemove}  
         onUpdate={this.handleUpdate}
       />
