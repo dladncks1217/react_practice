@@ -6,6 +6,7 @@ class Example extends Component{
         value:'',
         name:'',
         result:'',
+        operator:''
     }
     handleChange=(e)=>{
         this.setState({
@@ -14,11 +15,16 @@ class Example extends Component{
     }
     handleSubmit=(e)=>{
         e.preventDefault();
-        if(!this.state.value){
+        if(this.state.value!==''){
             this.setState({
                 result:Number(this.state.value),
             })
         }
+    }
+    buttonClick=(e)=>{  
+        this.setState({
+            operator:e.target.value,
+        })
     }
     render(){
         return(
