@@ -11,6 +11,7 @@ class PhoneInfo extends Component {
         if(this.state !== nextState){
             return true;
         }
+        return this.props.info !== nextProps.info; // 영향 안받는 컴포넌트들 렌더링 막기
     }
     
 
