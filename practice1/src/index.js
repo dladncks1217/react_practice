@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import InputForms from "./inputForm";
+import Tab from "./Tab";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <InputForms></InputForms>
+    <Tab></Tab>
   </React.StrictMode>,
   document.getElementById("root")
 );
