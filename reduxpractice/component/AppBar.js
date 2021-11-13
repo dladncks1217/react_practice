@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { Menu, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import user, { logoutAction } from "../reducers/user";
+import user, { loginAction, logoutAction } from "../reducers/user";
 
 const AppBar = () => {
   const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.user);
 
-  useEffect(() => {
+  const onLogOut = () => {
     dispatch(logoutAction);
-  }, []);
+  };
 
   return (
     <Menu mode="horizontal">
@@ -21,8 +21,8 @@ const AppBar = () => {
       </Menu.Item>
       {isLoggedIn ? (
         <Menu.Item>
-          <Menu.Item key="home">
-            <Link href="/joinpage">
+          <Menu.Item key="home" onClick={onLogOut}>
+            <Link href="/">
               <a>로그아웃</a>
             </Link>
           </Menu.Item>
