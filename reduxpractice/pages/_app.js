@@ -1,19 +1,21 @@
 import React from "react";
 import Head from "next/head";
+import AppLayout from "../component/AppLayout";
 
 const ReduxPractice = ({ Component }) => {
   return (
     <>
       <Head>
-        <title>Nodebird</title>
+        <title>ReduxPractice</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
         />
       </Head>
-
-      <div>asdf</div>
-      <Component />
+      <AppLayout>
+        <br />
+        <Component />
+      </AppLayout>
     </>
   );
 };
