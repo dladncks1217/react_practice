@@ -7,11 +7,11 @@ export const initialState = {
 export const EXAMPLE_TRUE = "EXAMPLE_TRUE";
 export const EXAMPLE_FALSE = "EXAMPLE_FALSE";
 
-export const exampleTrueAction = {
+export const makeTrueAction = {
   type: EXAMPLE_TRUE,
 };
 
-export const exampleFalseAction = {
+export const makeFalseAction = {
   type: EXAMPLE_FALSE,
 };
 

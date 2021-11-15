@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import withRedux from "next-redux-wrapper";
 import { applyMiddleware, createStore, compose } from "redux";
-import reducer, { exampleTrueAction } from "../reducers";
+import reducer, { makeTrueAction, makeFalseAction } from "../reducers";
 import { useDispatch } from "react-redux";
 
 const ReduxExample = () => {
@@ -9,9 +9,12 @@ const ReduxExample = () => {
 
   const [text, setText] = useState("");
 
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
-    dispatch(exampleTrueAction);
+  const makeTrue = useCallback(() => {
+    dispatch(makeTrueAction);
+  }, []);
+
+  const makeFalse = useCallback(() => {
+    dispatch(makeFalseAction);
   }, []);
 
   const onChangeText = (e) => {
@@ -20,10 +23,9 @@ const ReduxExample = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
-        <input type="text" onChange={onChangeText} />
-        <button type="submit">submit</button>
-      </form>
+      <input type="text" onChange={onChangeText} />
+      <button onClick={makeTrue}>true</button>
+      <button onClick={makeFalse}>false</button>
     </>
   );
 };
