@@ -2,17 +2,24 @@ import { combineReducers } from "redux";
 
 export const initialState = {
   isTrue: false,
+  data: "asdf",
 };
 
 export const EXAMPLE_TRUE = "EXAMPLE_TRUE";
 export const EXAMPLE_FALSE = "EXAMPLE_FALSE";
 
-export const makeTrueAction = {
-  type: EXAMPLE_TRUE,
+export const makeTrueAction = (data) => {
+  return {
+    type: EXAMPLE_TRUE,
+    data,
+  };
 };
 
-export const makeFalseAction = {
-  type: EXAMPLE_FALSE,
+export const makeFalseAction = (data) => {
+  return {
+    type: EXAMPLE_FALSE,
+    data,
+  };
 };
 
 const reducer = (state = initialState, action) => {
