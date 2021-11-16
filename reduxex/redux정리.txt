@@ -1,0 +1,25 @@
+1. 사용 이유
+state 종속성 탈피.
+useState사용 시 컴포넌트 내부에 state생성, 함수로 state를 바꿈.
+따라서 state가 컴포넌트에 종속되는 것은 당연.
+redux의 경우 상태관리를 프로젝트의 최상단의 store라는 곳에서 함.
+이후 아래에 속해있는 모든 컴포넌트는 필요에 맞는 state를 사용하고 바꿀 수 있게 함.
+https://kyounghwan01.github.io/blog/React/redux/redux-basic
+
+예를들어 자식의 자식의 자식컴포넌트가 부모 컴포넌트의 state를 수정하려한다면 매우 피곤해짐.
+이는 redux를 통해 해결 가능.
+(부모/ 자식 컴포넌트 관계 없이 한번에 상태를 받아내기 가능.)
+
+
+2. redux 기본 원리
+redux는 flux패턴 사용.( 그러나 flux패턴을 그대로 구현한 것은 아님. )
+Action -> Dispatch -> Store -> View
+flux 패턴의 가장 큰 특징: 단방향 데이터 흐름.
+view(컴포넌트)에서 Dispatch(redux state를 바꾸게 해주는 함수)를 통해서 action(Dispatch함수 이름)
+이 실행됨.
+이후 reducer에 있는 로직에 따라 store의 state가 변화함.
+이후 이 state를 사용하는 컴포넌트(view)가 state의 변경에 따라 적용됨.
+
+https://www.huskyhoochu.com/flux-architecture/
+액션은 데이터의 상태를 변경할 수 있는 명령어 카드와 같습니다. 액션 생성자는 새로 발생한 액션의 타입과 데이터 페이로드를 액션 메시지로 묶어 디스패쳐로 전달합니다.
+

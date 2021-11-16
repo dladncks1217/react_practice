@@ -3,6 +3,7 @@ import withRedux from "next-redux-wrapper";
 import { applyMiddleware, createStore, compose } from "redux";
 import reducer, { makeTrueAction, makeFalseAction } from "../reducers";
 import { useDispatch } from "react-redux";
+import Parent from "../component/Parent";
 
 const ReduxExample = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const ReduxExample = () => {
       <input type="text" onChange={onChangeText} />
       <button onClick={makeTrue}>true</button>
       <button onClick={makeFalse}>false</button>
+      <Parent />
     </>
   );
 };
