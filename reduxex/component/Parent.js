@@ -4,17 +4,24 @@ import Child from "./Child";
 export default class Parent extends React.Component {
   constructor() {
     super();
+    this.state = {
+      text: "",
+    };
+    this.setText = this.setText.bind(this);
   }
 
-  onSubmit(text) {
-    console.log("부모에서 콘솔찍음 " + text);
+  setText(newtext) {
+    this.setState({
+      text: newtext,
+    });
   }
 
   render() {
     return (
-      <div>
-        <Child onSubmit={this.onSubmit} />
-      </div>
+      <>
+        <input type="text" value={this.state.text} onChange={this.setText} />
+        <Child setNewText={this.setText} />
+      </>
     );
   }
 }

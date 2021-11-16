@@ -3,31 +3,13 @@ import React from "React";
 export default class Child extends React.Component {
   constructor() {
     super();
-    this.state = {
-      check: "",
-    };
+    this.setNewText = this.setNewText.bind(this);
   }
-  onSubmit = (e) => {
-    e.preventDefault();
-    this.props.onSubmit(this.state.check);
-  };
-  onChanges = (e) => {
-    this.setState({
-      check: e.target.value,
-    });
-  };
 
+  setNewText() {
+    this.props.setNewText("텍스트바꿈");
+  }
   render() {
-    return (
-      <>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            value={this.state.check}
-            onChange={this.onChanges}
-          />
-        </form>
-      </>
-    );
+    return <button onClick={this.setNewText}>텍스트 변경</button>;
   }
 }

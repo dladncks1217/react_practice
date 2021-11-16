@@ -1,8 +1,6 @@
-import { combineReducers } from "redux";
-
 export const initialState = {
   isTrue: false,
-  data: "asd",
+  data: "",
 };
 
 export const EXAMPLE_TRUE = "EXAMPLE_TRUE";
@@ -46,4 +44,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default combineReducers({ reducer });
+export default reducer;
