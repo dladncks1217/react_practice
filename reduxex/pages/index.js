@@ -9,13 +9,9 @@ const ReduxExample = () => {
 
   const [text, setText] = useState("");
 
-  const makeTrue = useCallback(() => {
-    dispatch(makeTrueAction(text));
-  }, []);
+  const makeTrue = () => dispatch(makeTrueAction(text));
 
-  const makeFalse = useCallback(() => {
-    dispatch(makeFalseAction(text));
-  }, []);
+  const makeFalse = () => dispatch(makeFalseAction(text));
 
   const onChangeText = (e) => {
     setText(e.target.value);

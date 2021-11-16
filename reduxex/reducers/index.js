@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 export const initialState = {
   isTrue: false,
-  data: "asdf",
+  data: "asd",
 };
 
 export const EXAMPLE_TRUE = "EXAMPLE_TRUE";
@@ -28,12 +28,14 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isTrue: true,
+        data: action.data,
       };
     }
     case EXAMPLE_FALSE: {
       return {
         ...state,
         isTrue: false,
+        data: action.data,
       };
     }
     default: {
