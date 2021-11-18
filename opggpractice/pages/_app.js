@@ -1,13 +1,17 @@
 import React from "react";
+import Head from "next/head";
+import AppLayout from "../components/AppLayout";
 import indexCss from "../public/index.css";
 
 const App = ({ Component }) => {
   return (
     <>
-      <head>
+      <Head>
         <link rel="stylesheet" href={indexCss} />
-        <Component />
-      </head>
+        <AppLayout>
+          <Component />
+        </AppLayout>
+      </Head>
     </>
   );
 };
