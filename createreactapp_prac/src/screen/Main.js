@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <div>
       {/* <Typography variant="h3">Main</Typography> */}
-      <div>aasdfsd</div>
+      <div>aasddfsd</div>
     </div>
   );
 }
