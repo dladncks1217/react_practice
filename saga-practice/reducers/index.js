@@ -8,7 +8,7 @@ export const EXAMPLE_ACTION = "EXAMPLE_ACTION";
 export const clickButtonAction = (data) => {
   return {
     type: CLICK_BUTTON,
-    text: data,
+    data,
   };
 };
 

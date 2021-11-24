@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import withRedux from "next-redux-wrapper";
 import { useDispatch, useSelector } from "react-redux";
 import { applyMiddleware, createStore, compose } from "redux";
-import reducer from "../reducers";
+import reducer, { clickButtonAction } from "../reducers";
 
 const IndexPage = () => {
   const dispatch = useDispatch();
@@ -14,6 +14,8 @@ const IndexPage = () => {
     setText(e.target.value);
   };
 
+  const onClickButton = () => dispatch(clickButtonAction(text));
+
   useEffect(() => {
     dispatch({
       type: "EXAMPLE_ACTION",
@@ -23,12 +25,12 @@ const IndexPage = () => {
   return (
     <>
       <input type="text" onChange={onChangeText} />
-      <button>버튼</button>
+      <button onClick={onClickButton}>버튼</button>
     </>
   );
 };
 
-export default withRedux((initialState, options) => {
+export default withRedux((initialState) => {
   const middlewares = [];
   const enhancer =
     process.env.NODE_ENV === "production"
