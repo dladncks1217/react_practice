@@ -2,6 +2,7 @@ export const initialState = {
   text: "",
 };
 
+export const BUTTON_FAILURE = "BUTTON_FAILURE";
 export const CLICK_BUTTON = "CLICK_BUTTON";
 export const EXAMPLE_ACTION = "EXAMPLE_ACTION";
 
