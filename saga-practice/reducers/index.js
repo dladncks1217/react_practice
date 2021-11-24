@@ -5,6 +5,7 @@ export const initialState = {
 export const BUTTON_FAILURE = "BUTTON_FAILURE";
 export const CLICK_BUTTON = "CLICK_BUTTON";
 export const EXAMPLE_ACTION = "EXAMPLE_ACTION";
+export const CLICK_BUTTON_SAGAS = "CLICK_BUTTON_SAGAS";
 
 export const clickButtonAction = (data) => {
   return {
