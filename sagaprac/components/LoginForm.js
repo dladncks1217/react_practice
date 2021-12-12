@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Input, Button, Checkbox } from "antd";
+import { useDispatch } from "react-redux";
+import { LOG_IN_SUCCESS } from "../reducer";
 
 const LoginForm = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: LOG_IN_SUCCESS,
+      data: {},
+    });
+  }, [id, password]);
 
   const onFinishForm = () => {
     console.log(id, password);
