@@ -18,3 +18,54 @@ export const LOG_IN_FAILURE = "LOG_IN_FAILURE";
 export const LOG_OUT_REQUEST = "LOG_OUT_REQUEST";
 export const LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
 export const LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case LOG_IN_REQUEST: {
+      return {
+        ...state,
+        isLooggingIn: true,
+        logInErrorReason: "",
+      };
+    }
+    case LOG_IN_SUCCESS: {
+      return {
+        ...state,
+        isLooggingIn: false,
+        isLoggedIn: true,
+        me: dummyUser,
+      };
+    }
+    case LOG_IN_FAILURE: {
+      return {
+        ...state,
+        isLooggingIn: false,
+        isLooggedIn: false,
+        me: null,
+        logInErrorReason: action.error,
+      };
+    }
+    case LOG_OUT_REQUEST: {
+      return {
+        ...state,
+        isLooggingIn: true,
+        logInErrorReason: "",
+      };
+    }
+    case LOG_OUT_SUCCESS: {
+      return {
+        ...state,
+        isLooggingIn: false,
+        isLoggedIn: false,
+        me: null,
+      };
+    }
+    case LOG_OUT_FAILURE: {
+      return {
+        ...state,
+        isLooggingIn: false,
+        logInErrorReason: action.error,
+      };
+    }
+  }
+};
