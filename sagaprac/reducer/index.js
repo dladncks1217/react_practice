@@ -24,14 +24,14 @@ const rootReducer = (state = initialState, action) => {
     case LOG_IN_REQUEST: {
       return {
         ...state,
-        isLooggingIn: true,
+        isLoggingIn: true,
         logInErrorReason: "",
       };
     }
     case LOG_IN_SUCCESS: {
       return {
         ...state,
-        isLooggingIn: false,
+        isLoggingIn: false,
         isLoggedIn: true,
         me: dummyUser,
       };
@@ -39,8 +39,8 @@ const rootReducer = (state = initialState, action) => {
     case LOG_IN_FAILURE: {
       return {
         ...state,
-        isLooggingIn: false,
-        isLooggedIn: false,
+        isLoggingIn: false,
+        isLoggedIn: false,
         me: null,
         logInErrorReason: action.error,
       };
@@ -48,14 +48,14 @@ const rootReducer = (state = initialState, action) => {
     case LOG_OUT_REQUEST: {
       return {
         ...state,
-        isLooggingIn: true,
+        isLoggingIn: true,
         logInErrorReason: "",
       };
     }
     case LOG_OUT_SUCCESS: {
       return {
         ...state,
-        isLooggingIn: false,
+        isLoggingIn: false,
         isLoggedIn: false,
         me: null,
       };
@@ -63,8 +63,13 @@ const rootReducer = (state = initialState, action) => {
     case LOG_OUT_FAILURE: {
       return {
         ...state,
-        isLooggingIn: false,
+        isLoggingIn: false,
         logInErrorReason: action.error,
+      };
+    }
+    default: {
+      return {
+        ...state,
       };
     }
   }
