@@ -1,11 +1,12 @@
+import React from "react";
 import { Row, Col } from "antd";
 import Head from "next/head";
-import React, { useEffect } from "react";
 import LoginForm from "../components/LoginForm";
 import withRedux from "next-redux-wrapper";
 import { applyMiddleware, createStore, compose } from "redux";
-// import createSagaMiddleware from "@redux-saga/core";
-import reducer, { LOG_IN_SUCCESS } from "../reducer";
+import createSagaMiddleware from "@redux-saga/core";
+import reducer from "../reducer";
+import rootSaga from "../sagas";
 
 const Index = () => {
   return (
@@ -32,9 +33,9 @@ const Index = () => {
 };
 
 const configureStore = (initialState) => {
-  //   const sagaMiddleware = createSagaMiddleware();
+  const sagaMiddleware = createSagaMiddleware();
 
-  const middlewares = []; //sagaMiddleware
+  const middlewares = [sagaMiddleware];
   const enhancer =
     process.env.NODE_ENV === "production"
       ? compose(applyMiddleware(...middlewares))
@@ -47,7 +48,7 @@ const configureStore = (initialState) => {
         );
   const store = createStore(reducer, initialState, enhancer);
 
-  //   sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(rootSaga);
   return store;
 };
 
