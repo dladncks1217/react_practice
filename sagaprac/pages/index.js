@@ -7,8 +7,11 @@ import { applyMiddleware, createStore, compose } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
 import reducer from "../reducer";
 import rootSaga from "../sagas";
+import UserCard from "../components/UserCard";
+import { useSelector } from "react-redux";
 
 const Index = () => {
+  const { me } = useSelector((state) => state);
   return (
     <>
       <Head>
@@ -24,7 +27,7 @@ const Index = () => {
       <Row>
         <Col xs={24} md={6}></Col>
         <Col xs={24} md={12}>
-          <LoginForm />
+          {me === undefined ? <LoginForm /> : <UserCard />}
         </Col>
         <Col xs={24} md={6}></Col>
       </Row>
