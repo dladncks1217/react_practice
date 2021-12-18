@@ -1,5 +1,6 @@
+let number = 0;
 const initialState = {
-  number: 0,
+  number,
   requestFailureReason: "",
 };
 
@@ -16,9 +17,10 @@ const rootReducer = (state = initialState, action) => {
       };
     }
     case ADD_NUBER_SUCCESS: {
+      console.log(number);
       return {
         ...state,
-        number: number + 1,
+        number: ++number,
       };
     }
     case ADD_NUBER_FAILURE: {
