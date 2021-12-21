@@ -13,6 +13,7 @@ const Index = () => {
   const dispatch = useDispatch();
 
   const setNumberChangeRedux = useCallback(() => {
+    console.log("redux");
     dispatch({
       type: ADD_NUBER_REQUEST,
     });
@@ -27,7 +28,6 @@ const Index = () => {
           href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
         />
       </Head>
-
       <Button onClick={setNumberChangeRedux}>aasdfadssdf</Button>
     </>
   );
