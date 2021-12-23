@@ -8,6 +8,7 @@ import { fork, takeEvery, put, delay } from "redux-saga/effects";
 function* addNumber() {
   try {
     yield delay(2000);
+    // + 추가 함수들
     yield put({
       type: ADD_NUBER_SUCCESS,
     });
