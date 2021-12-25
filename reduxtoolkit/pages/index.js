@@ -19,10 +19,11 @@ const Index = () => {
     });
   }, []);
 
+  //
   return (
     <>
       <Head>
-        <title>Nodebird</title>
+        <title>Toolkit Example</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
