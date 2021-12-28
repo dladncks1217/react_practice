@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 
 import reducer, { ADD_NUBER_REQUEST } from "../reducer";
 import rootSaga from "../sagas";
+import logIn from "../actions/user";
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,15 @@ const Index = () => {
     dispatch({
       type: ADD_NUBER_REQUEST,
     });
+  }, []);
+
+  const setNumberChangeReduxToolkit = useCallback(() => {
+    dispatch(
+      logIn({
+        userId: "임우찬",
+        password: "asdf",
+      })
+    );
   }, []);
 
   //
@@ -30,6 +40,10 @@ const Index = () => {
         />
       </Head>
       <Button onClick={setNumberChangeRedux}>aasdfadssdf</Button>
+      <br />
+      <br />
+      <br />
+      <Button onClick={setNumberChangeReduxToolkit}>aasdfadssdf</Button>
     </>
   );
 };
