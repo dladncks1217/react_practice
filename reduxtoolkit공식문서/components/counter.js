@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, logIn } from "../slice/counterSlice";
+import { logIn } from "../actions";
+import { decrement, increment } from "../slice/counterSlice";
 
 const Counter = () => {
   const count = useSelector((state) => state.counter.value);
@@ -20,8 +21,7 @@ const Counter = () => {
       >
         Decrement
       </button>
-
-      <button onClick={() => dispatch(logIn.pending)}>Login</button>
+      <button onClick={() => dispatch(logIn())}>Login</button>
     </>
   );
 };

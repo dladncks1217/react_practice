@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { logIn } from "../actions";
 
 const initialState = {
   email: null,
@@ -16,9 +17,10 @@ export const logInSlice = createSlice({
       state.isLoggingIn = true;
     },
     [logIn.fulfilled](state, action) {
-      (state.email = "dlaxodud1217@naver.com"),
-        (state.password = "password1234"),
-        (state.isLoggingIn = false);
+      //   (state.email = "dlaxodud1217@naver.com"),
+      //     (state.password = "password1234"),
+      //     (state.isLoggingIn = false);
+      state.email = "asdf";
     },
     [logIn.rejected](state, action) {
       state.logInRejectedReason = "asdf";
