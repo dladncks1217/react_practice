@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { logIn } from "../actions";
+import { logIn, textToolkit } from "../actions";
 import { decrement, increment } from "../slice/counterSlice";
 
 const Counter = () => {
   const count = useSelector((state) => state.counter.value);
+  const [text, setText] = useState("");
   const dispatch = useDispatch();
+
+  const onChangeText = useCallback((e) => {
+    setText(e.target.value);
+  });
   return (
     <>
       <button
@@ -22,6 +27,14 @@ const Counter = () => {
         Decrement
       </button>
       <button onClick={() => dispatch(logIn())}>Login</button>
+      <br />
+      <br />
+      <br />
+      <input type="text" onChange={onChangeText} value={text} />
+      &nbsp;&nbsp;
+      <button onClick={() => dispatch(textToolkit({ text, hi: "hello!" }))}>
+        start pending
+      </button>
     </>
   );
 };

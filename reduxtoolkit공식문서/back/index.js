@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(
   router.get("/", (req, res, next) => {
-    res.send("adsf");
+    res.send("서버요청이왔네요");
   })
 );
 
