@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { applyMiddleware, createStore, compose } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
 import reducer from "../reducers/button";
-import buttonSaga from "../sagas";
+import rootSaga from "../sagas";
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -13,11 +13,9 @@ const Index = () => {
   const [password, setPassword] = useState("");
 
   const onChangeEmail = (e) => {
-    console.log(e.target.value);
     setEmail(e.target.value);
   };
   const onChangePassword = (e) => {
-    console.log(e.target.value);
     setPassword(e.target.value);
   };
 
@@ -27,9 +25,16 @@ const Index = () => {
     });
   });
 
-  const onFormSubmit = useCallback(() => {
-    //
-  }, [email, password]);
+  const onFormSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      dispatch({
+        type: "LOGIN_REQUEST",
+        user: { email, password },
+      });
+    },
+    [email, password]
+  );
 
   return (
     <>
@@ -60,6 +65,6 @@ export default withRedux((initialState) => {
             : (f) => f
         );
   const store = createStore(reducer, initialState, enhancer);
-  sagaMiddleware.run(buttonSaga);
+  sagaMiddleware.run(rootSaga);
   return store;
 })(Index);
