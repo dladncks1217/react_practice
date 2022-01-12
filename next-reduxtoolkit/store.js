@@ -17,3 +17,5 @@ const store = configureStore({
 });
 
 module.exports = store;
+
+// 확인용 커밋
