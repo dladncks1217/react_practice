@@ -19,7 +19,8 @@ export const joinSlice = createSlice({
     [join.fulfilled](state, action) {
       state.isJoined = true;
       state.isJoining = false;
-      state.joinUser = action.payload;
+      state.joinUser = action.payload.config.data;
+      state.joinRejectReason = "";
     },
     [join.rejected](state, action) {
       state.isJoining = false;
