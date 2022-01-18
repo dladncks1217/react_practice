@@ -22,6 +22,7 @@ export class UsersService {
         name,
         password: hashedpassword,
       });
+      return newuser;
     }
   }
 }
