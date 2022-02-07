@@ -19,15 +19,15 @@ const LoginForm = () => {
     });
   }, [id, password]);
 
-  const onChangeId = (e) => {
+  const onChangeId = useCallback((e) => {
     setId(e.target.value);
     console.log(id);
-  };
+  });
 
-  const onChangePassword = (e) => {
+  const onChangePassword = useCallback((e) => {
     setPassword(e.target.value);
     console.log(password);
-  };
+  });
 
   return (
     <Form
