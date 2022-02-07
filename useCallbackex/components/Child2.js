@@ -1,8 +1,8 @@
 import React from "react";
 
-const Child = ({ addNumber }) => {
+const Child2 = ({ addNumber }) => {
   //   console.log(number);
   return <button onClick={addNumber}>+1버튼</button>;
 };
 
-export default React.memo(Child);
+export default React.memo(Child2);
