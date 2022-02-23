@@ -4,9 +4,14 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import AppLayout from "../components/AppLayout";
+import { Button, Input } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
 
 const App = ({ Components }) => {
+  const dummy = {
+    isLoggedIn: true,
+    point: 1234,
+  };
   const suffix = (
     <AudioOutlined
       style={{
@@ -25,7 +30,7 @@ const App = ({ Components }) => {
         />
       </Head>
       <Menu theme="dark" mode="horizontal">
-        <Row>
+        <Row style={{ height: 40 }}>
           <Menu.Item key="gohome">
             <Col xs={24} md={4}>
               <Link href="/">
@@ -41,7 +46,31 @@ const App = ({ Components }) => {
                 enterButton="조회"
               />
             </Col>
-            <Col xs={24} md={4}></Col>
+            <Col xs={24} md={4}>
+              {dummy.isLoggedIn ? (
+                <>
+                  <Input
+                    defaultValue={`${dummy.point} 포인트`}
+                    readOnly
+                    style={{ width: "50%", marginLeft: "20%" }}
+                  />
+                  <Button
+                    style={{ float: "right", height: 20, marginBottom: -16 }}
+                  >
+                    프로필
+                  </Button>
+                  <Button
+                    style={{ float: "right", height: 20, marginTop: -16 }}
+                  >
+                    아이콘
+                  </Button>
+                </>
+              ) : (
+                <Button type="primary" style={{ float: "right", marginTop: 8 }}>
+                  로그인
+                </Button>
+              )}
+            </Col>
           </Menu.Item>
         </Row>
       </Menu>
