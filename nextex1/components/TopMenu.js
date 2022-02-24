@@ -4,6 +4,7 @@ import Search from "antd/lib/transfer/search";
 import Link from "next/link";
 import { Button, Input } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
+import MyPageIcon from "./MypageIcon";
 
 const TopMenu = () => {
   const dummy = {
@@ -44,14 +45,7 @@ const TopMenu = () => {
                   readOnly
                   style={{ width: "50%", marginLeft: "20%" }}
                 />
-                <Button
-                  style={{ float: "right", height: 20, marginBottom: -19 }}
-                >
-                  프로필
-                </Button>
-                <Button style={{ float: "right", height: 20, marginTop: -19 }}>
-                  아이콘
-                </Button>
+                {/* <MyPageIcon /> */}
               </>
             ) : (
               <Button type="primary" style={{ float: "right", marginTop: 8 }}>
