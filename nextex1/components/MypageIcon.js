@@ -13,11 +13,22 @@ const text = `
 `;
 
 const MyPageIcon = () => {
+  const Icon = () => {
+    return <image src="https://avatars.githubusercontent.com/u/45068522?v=4" />;
+  };
   return (
     <>
-      <Collapse defaultActiveKey={["1"]} onChange={callback} width={{}}>
-        <Panel header="This is panel header 1" key="1">
-          <p>{text}</p>
+      <Collapse
+        defaultActiveKey={["1"]}
+        onChange={callback}
+        width={{}}
+        expandIcon={Icon}
+      >
+        <Panel extra={Icon} key="1">
+          <p>마이페이지</p>
+          <p>포인트충전</p>
+          <p>거래 목록</p>
+          <p>로그아웃</p>
         </Panel>
       </Collapse>
     </>

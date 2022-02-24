@@ -12,7 +12,7 @@ const AutionCard = () => {
   return (
     <Card
       hoverable
-      style={{ width: 240, display: "inline-block", margin: 40 }}
+      style={{ width: 240, display: "inline-block", margin: 30 }}
       cover={
         <img
           alt="example"
