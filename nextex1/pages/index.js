@@ -14,9 +14,8 @@ const Index = () => {
         <AutionCard />
         <AutionCard />
       </List>
-      <List header="경매 진행 목록">
-        <AuctionList />
-      </List>
+
+      <AuctionList />
     </>
   );
 };

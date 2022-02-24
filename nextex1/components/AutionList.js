@@ -3,7 +3,17 @@ import { List, Avatar, Space } from "antd";
 import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
 
 const AuctionList = () => {
-  const listData = [];
+  const listData = [
+    {
+      href: "https://ant.design",
+      title: `ant design part1`,
+      avatar: "https://joeschmoe.io/api/v1/random",
+      description:
+        "Ant Design, a design language for background applications, is refined by Ant UED Team.",
+      content:
+        "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
+    },
+  ];
   //   for (let i = 0; i < 2; i++) {
   //     listData.push({
   //       href: "https://ant.design",
@@ -25,6 +35,7 @@ const AuctionList = () => {
   return (
     <>
       <List
+        header={"경매 진행 목록"}
         itemLayout="vertical"
         size="large"
         pagination={{
@@ -68,11 +79,15 @@ const AuctionList = () => {
             }
           >
             <List.Item.Meta
-              avatar={<Avatar src={item.avatar} />}
-              title={<a href={item.href}>{item.title}</a>}
-              description={item.description}
+              avatar={<Avatar src={"https://joeschmoe.io/api/v1/random"} />}
+              title={<a href={"https://ant.design"}>{"ant design part1"}</a>}
+              description={
+                "Ant Design, a design language for background applications, is refined by Ant UED Team."
+              }
             />
-            {item.content}
+            {
+              "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently."
+            }
           </List.Item>
         )}
       />
