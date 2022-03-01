@@ -4,8 +4,8 @@ import button from "./button";
 import login from "./login";
 
 const rootReducer = combineReducers({
-  button,
   login,
+  button,
 });
 
 export default rootReducer;

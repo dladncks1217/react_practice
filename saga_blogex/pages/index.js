@@ -3,7 +3,7 @@ import withRedux from "next-redux-wrapper";
 import { useDispatch } from "react-redux";
 import { applyMiddleware, createStore, compose } from "redux";
 import createSagaMiddleware from "@redux-saga/core";
-import reducer from "../reducers/button";
+import reducer from "../reducers";
 import rootSaga from "../sagas";
 
 const Index = () => {
