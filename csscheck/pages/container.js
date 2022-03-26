@@ -21,3 +21,10 @@ export default Container;
 // flex-end(끝에다가 배치한다.), flex-start(맨 앞에다가), center(교차축에서의 가운데 방향)
 
 // align-self : 교차축에서 요소 하나의 배치방법을 결정하는 속성.
+// *특정 요소만* flex-end(끝에다가 배치한다.), flex-start(맨 앞에다가), center(교차축에서의 가운데 방향)
+
+// flex요소는 자식 요소가 자신보다 커지게 된다면 flex컨테이너는 자식 요소를 수축시키는 특성이 있음.
+// 이 특성이 싫다면 아래 속성 사용
+// flex-wrap : flex컨테이너의 하위 요소들이 flex 컨테이너보다 커져버렸을 때의 처리방법을 결정.
+// no-wrap(기본), wrap(하위 요소가 더 커져버린다면 두 행 이상으로 처리하는것을 허용.)
+// wrap-reverse(wrap은 하긴하되, 반대방향으로 처리.)
