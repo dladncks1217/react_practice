@@ -1,4 +1,5 @@
 import React from "react";
+
 import Link from "next/link";
 import Head from "next/head";
 import AppLayout from "../components/AppLayout";
@@ -9,10 +10,6 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>확인용</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
-        />
         <link rel="stylesheet" href="../public/index.css" />
       </Head>
       <AppLayout>
