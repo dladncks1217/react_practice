@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  height: 10vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: grey;
+}
+main {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+main .leftnav {
+  flex-grow: 0;
+}
+main .maincontent {
+  flex-grow: 1;
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+main .rightnav {
+  flex-grow: 0;
+}
+.list {
+  font-size: 35px;
+}
