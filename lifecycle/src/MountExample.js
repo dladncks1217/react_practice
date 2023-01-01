@@ -8,6 +8,7 @@ class MountExample extends React.Component {
     };
     this.handleNumber = this.handleNumber.bind(this);
   }
+
   handleNumber() {
     console.log(this.state.number);
     this.setState({
@@ -15,6 +16,8 @@ class MountExample extends React.Component {
     });
   }
   render() {
+    console.log(React);
+    console.log(this);
     return <button onClick={this.handleNumber}>버튼임</button>;
   }
 }
