@@ -10,15 +10,24 @@ class MountExample extends React.Component {
   }
 
   handleNumber() {
-    console.log(this.state.number);
     this.setState({
-      number: this.state.number + 1,
+      // number: this.state.number + 1,
     });
   }
+
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    if (this.state.number === nextState.number) {
+      return false;
+    }
+    return true;
+  }
+
   render() {
-    console.log(React);
-    console.log(this);
-    return <button onClick={this.handleNumber}>버튼임</button>;
+    return (
+      <>
+        <button onClick={this.handleNumber}>나는버튼</button>
+      </>
+    );
   }
 }
 
